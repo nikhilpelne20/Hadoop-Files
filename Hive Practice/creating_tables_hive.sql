@@ -56,14 +56,14 @@ stored as textfile;
 
 
 
-load data local inpath /home/maria_dev/hive_practice_data/customers.csv
+load data local inpath '/home/maria_dev/hive_practice_data/customers.csv'
 into table customers;
 
-load data local inpath /home/maria_dev/hive_practice_data/orders.csv
+load data local inpath '/home/maria_dev/hive_practice_data/orders.csv'
 into table orders;
 
-load data local inpath /home/maria_dev/hive_practice_data/products.csv
-into table product;
+load data local inpath '/home/maria_dev/hive_practice_data/products.csv'
+into table products;
 
 
 select * from customer;
