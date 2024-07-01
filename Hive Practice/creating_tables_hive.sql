@@ -45,13 +45,13 @@ stored as textfile;
 
 
 
-load data local /home/maria_dev/hive_practice_data/customers.csv
+load data local inpath /home/maria_dev/hive_practice_data/customers.csv
 into table customers;
 
-load data local /home/maria_dev/hive_practice_data/orders.csv
+load data local inpath /home/maria_dev/hive_practice_data/orders.csv
 into table orders;
 
-load data local /home/maria_dev/hive_practice_data/products.csv
+load data local inpath /home/maria_dev/hive_practice_data/products.csv
 into table product;
 
 
