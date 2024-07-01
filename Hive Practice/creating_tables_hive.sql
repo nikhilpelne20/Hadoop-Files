@@ -16,58 +16,57 @@ CREATE DATABASE IF NOT EXISTS total_sales;
 USE total_sales;
 
 -- Customers Table
-create table customers(
-customer_id int,
-name string,
-age int,
-gender string,
-city string,
-signup_date string
+CREATE TABLE customers (
+  customer_id INT,
+  name STRING,
+  age INT,
+  gender STRING,
+  city STRING,
+  signup_date STRING
 )
-row format delimited
-fields terminated by ','
-lines terminated by '\n'
-stored as textfile;
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
 
 -- Orders Table
-create table orders(
-order_id int,
-customer_id int,
-order_date string,
-order_amount double,
-product_id int
+CREATE TABLE orders (
+  order_id INT,
+  customer_id INT,
+  order_date STRING,
+  order_amount DOUBLE,
+  product_id INT
 )
-row format delimited 
-fields terminated by ','
-lines terminated by '\n'
-stored as textfile;
+ROW FORMAT DELIMITED 
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
 
 -- Products Table
-create table products(
-product_id int,
-product_name string,
-category string,
-price double
+CREATE TABLE products (
+  product_id INT,
+  product_name STRING,
+  category STRING,
+  price DOUBLE
 )
-row format delimited
-fields terminated by ','
-lines terminated by '\n'
-stored as textfile;
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
 
+-- Load data into customers table
+LOAD DATA LOCAL INPATH '/home/maria_dev/hive_practice_data/customers.csv'
+INTO TABLE customers;
 
+-- Load data into orders table
+LOAD DATA LOCAL INPATH '/home/maria_dev/hive_practice_data/orders.csv'
+INTO TABLE orders;
 
-load data local inpath '/home/maria_dev/hive_practice_data/customers.csv'
-into table customers;
+-- Load data into products table
+LOAD DATA LOCAL INPATH '/home/maria_dev/hive_practice_data/products.csv'
+INTO TABLE products;
 
-load data local inpath '/home/maria_dev/hive_practice_data/orders.csv'
-into table orders;
-
-load data local inpath '/home/maria_dev/hive_practice_data/products.csv'
-into table products;
-
-
-select * from customer;
-select * from orders;
-select * from products;
-
-
+-- Select data from tables to verify
+SELECT * FROM customers;
+SELECT * FROM orders;
+SELECT * FROM products;
