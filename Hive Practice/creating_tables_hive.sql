@@ -1,8 +1,19 @@
-drop database if exists total_sales;
+-- Switch to the database if it exists
+USE total_sales;
 
-create database if not exists total_sales;
+-- Drop the tables if they exist
+DROP TABLE IF EXISTS customers;
+DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS products;
 
-use total_sales;
+-- Drop the database if it exists
+DROP DATABASE IF EXISTS total_sales;
+
+-- Create the database
+CREATE DATABASE IF NOT EXISTS total_sales;
+
+-- Switch to the new database
+USE total_sales;
 
 -- Customers Table
 create table customers(
